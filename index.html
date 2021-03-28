@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div id="start">
+        <h1>Click <b>START</b> to play game</h1>
+        <p>Press &#8592 to move left</p>
+        <p>Press &#8593 to move up</p>
+        <p>Press &#8594 to move right</p>
+        <p>Press &#8595 to move down</p>
+    </div>
+    <div id="end">
+        <p id="result"></p>
+        <label>Enter your name</label>
+        <span>
+            <input type="text" id="name" width="100px">
+            <button id="saveScore">Save</button>
+        </span>
+    </div>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx =canvas.getContext('2d');
+        canvas.width = 800;
+        canvas.height = 500;
+
+        var limitLength;
+        var count = 0;
+
+        const mainMusic = new Audio("audio/findingjustice.mp3");
+        mainMusic.preload = "auto";
+        const gameOverMusic = new Audio("audio/gameOver.mp3");
+        const shootMusic = new Audio("audio/shoot.m4a");
+        const earnChest = new Audio("audio/earnChest.m4a");
+        const crashMusic = new Audio("audio/crash.m4a");
+
+        //background image
+        const background = new Image();
+        background.src = "img/Brick_04.png";
+
+        const playerImg = new Image();
+        playerImg.src = "img/rome.png";
+    </script>
+    <script src="js/player.js"></script>
+    <script src="js/opposingCharacter.js"></script>
+    <script src="js/bullet.js"></script>
+    <script src="js/reward.js"></script>
+    <script src="js/eventKeyboard.js"></script>
+    <script src="js/checkGameOver.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
